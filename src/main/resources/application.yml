@@ -1,0 +1,43 @@
+
+server:
+  port: 9999
+#
+spring:
+  application:
+    name: bcp-bootcamp-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: bidders-eureka
+          uri: lb://BCP-SHOPVINTAGE-BIDDERS
+          predicates:
+            - Path=/bidders/**
+#        - id: bidders-service
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/bidders/**
+#        - id: bidders-service
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/bidders
+#        - id: bidders-types
+#          uri: http://localhost:8080
+#          predicates:
+#            - Path=/bidders/types
+
+#        - id: products-service
+#          uri: lb://BOOTCAMP-ADVENTUREWORKS-PRODUCTS
+#          predicates:
+#            - Path=/products/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+#      defaultZone: http://192.168.0.7:8761/eureka
+
+#  instance:
+#    hostname: localhost
+
