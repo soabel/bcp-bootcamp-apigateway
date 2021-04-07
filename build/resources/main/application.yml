@@ -12,10 +12,6 @@ spring:
           uri: lb://BCP-SHOPVINTAGE-BIDDERS
           predicates:
             - Path=/bidders/**
-        - id: google-service
-          uri: http://www.google.com
-          predicates:
-            - Host=**.google.com
 #        - id: bidders-service
 #          uri: http://localhost:8080
 #          predicates:
